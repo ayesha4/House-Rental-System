@@ -1,0 +1,94 @@
+
+<div>
+
+<h2 class="hy">Houses You Posted</h2>
+{{#if success}}
+  <div class="success">
+    <strong>{{success}} </strong>  
+  </div>
+{{/if}}
+
+      <div class="container hyp">
+        <span style="margin-right: 20px;">Choose your category:</span>
+        <a href="#section1" class="btn button-59 btn-info fcc-btn" role="button">Apartment</a>
+        <a href="#section2" class="btn button-59 fcc-btn">Independent house</a>
+        <a href="#section3" class="btn button-59 fcc-btn">PG</a>
+      
+    </div>
+{{!-- edited --}}
+<div class="section one" id="section1">
+       
+    
+ <p class="lead">Apartment</p>
+{{#each item}}
+ <div class="card mb-1">
+                <img class="card-img-top img-responsive" height="50px" src="/uploads/{{file}}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Category:Apartment</h5>
+                  <p class="card-text mb-1">Owner: {{Address}}</p>
+                  <p class="card-text mb-1">Rent:{{rent}}</p>
+                 
+       
+                <form action="/Landlord/housedel/{{hid}}" method="POST">
+                 <button type="submit" class="button-80">DELETE</button>
+                </form>
+                  
+                     <form action="/Landlord/HouseReview/{{hid}}" method="get">
+    <button type="submit" class="button-80">Reviews</button>
+    </form>  
+</div>          
+   </div>
+             
+              
+{{/each}}
+{{!-- stop --}}
+</div>
+
+
+<div class="section two" id="section2"> 
+<p class="lead">Independent house</p> 
+{{!-- edited --}}
+{{#each item1}}
+ <div class="card mb-1">
+                <img class="card-img-top img-responsive" height="50px" src="/uploads/{{file}}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Category:Bunglow</h5>
+                  <p class="card-text mb-1">Owner: {{Address}}</p>
+                  <p class="card-text mb-1">Rent:{{rent}}</p>
+                  <form action="/Landlord/housedel/{{hid}}" method="POST">
+    <button type="submit" class="button-80">DELETE</button>
+    </form><br>
+    <form action="/Landlord/HouseReview/{{hid}}" method="get">
+    <button type="submit" class="button-80">Reviews</button>
+    </form>   
+             </div>
+              </div>
+{{/each}}
+{{!-- stop --}}
+<br></div>
+
+<div class="section three" id="section3">
+<p class="lead">PG</p>
+{{!-- edited --}}
+{{#each item2}}
+ <div class="card mb-1">
+                <img class="card-img-top img-responsive" height="50px" src="/uploads/{{file}}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Category:Pg</h5>
+                  <p class="card-text mb-1">Owner: {{Address}}</p>
+                  <p class="card-text mb-1">Rent:{{rent}}</p>
+                  <div class="row">
+                    <div class="col-4">
+                  <form action="/Landlord/housedel/{{hid}}" method="POST">
+    <button type="submit" class="button-80">DELETE</button>
+    </form><br></div>
+    <div class="col-4">
+    <form action="/Landlord/HouseReview/{{hid}}" method="get">
+    <button type="submit" class="button-80">Reviews</button>
+    </form>   </div></div>
+             </div>
+              </div>
+{{/each}}
+{{!-- stop --}}
+</div>
+</div>

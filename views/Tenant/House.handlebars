@@ -1,0 +1,83 @@
+ <div>
+<h2 class="large text-primary">Houses</h2>
+{{#if success}}
+  <div class="success">
+    <strong>{{success}} </strong>  
+  </div>
+{{/if}}
+
+{{#each error}}
+  <div class="success">
+    <strong>{{message}} </strong>  
+  </div>
+{{/each}}
+
+
+ <p class="lead">Apartment</p>
+      {{#each item}}
+
+    <div class="card mb-1">    
+       <img class="card-img-top img-responsive" height="50px" src="/uploads/{{file}}" alt="Card image cap">
+  <div class="container">
+    <div class="card-body">
+                  <h5 class="card-title">Category:Apartment</h5>
+                  <p class="card-text mb-1">Owner: {{Address}}</p>
+                  <p class="card-text mb-1">Rent:{{rent}}</p> 
+    <form action="/Tenant/house/{{hid}}" method="POST">
+    <button type="submit" class="button-59">Schedule Meeting</button>
+    </form><br>
+    <form action="/Tenant/houseReview/{{hid}}" method="get">
+    <button type="submit" class="button-59">Reviews</button>
+    </form>    
+  </div>
+</div></div>
+<br><br>
+{{/each}}
+
+
+<p class="lead">Bunglow</p>
+  {{#each item1}}
+    <div class="card mb-1">
+      <img class="card-img-top img-responsive" height="50px" src="/uploads/{{file}}" alt="Card image cap">
+
+  <h4><b>{{Address}}</b></h4> 
+  <div class="container">
+    <div class="card-body">
+                  <h5 class="card-title">Category:Apartment</h5>
+                  <p class="card-text mb-1">Owner: {{Address}}</p>
+                  <p class="card-text mb-1">Rent:{{rent}}</p>
+        <form action="/Tenant/house/{{hid}}" method="POST">
+    <button type="submit" class="button-59">Schedule Meeting</button>
+    </form><br>
+    <form action="/Tenant/houseReview/{{hid}}" method="get">
+    <button type="submit" class="button-59">Reviews</button>
+    </form>
+    </p>
+  </div>
+</div></div>
+<br><br>
+{{/each}}
+
+<p class="lead">Pg</p>
+  {{#each item2}}
+    <div class="card">
+        <img class="card-img-top img-responsive" height="50px" src="/uploads/{{file}}" alt="Card image cap">
+   <h4><b>{{Address}}</b></h4>
+  <div class="container">
+    <div class="card-body">
+                  <h5 class="card-title">Category:Apartment</h5>
+                  <p class="card-text mb-1">Owner: {{Address}}</p>
+                  <p class="card-text mb-1">Rent:{{rent}}</p>
+         <form action="/Tenant/house/{{hid}}" method="POST">
+    <button type="submit" class="button-59">Schedule Meeting</button>
+    </form><br>
+    <form action="/Tenant/houseReview/{{hid}}" method="get">
+    <button type="submit" class="button-59">Reviews</button>
+    </form>
+        
+    </p>
+  </div>
+</div></div>
+<br><br>
+{{/each}}
+

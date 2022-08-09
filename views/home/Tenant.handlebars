@@ -1,0 +1,69 @@
+
+
+  {{!-- THIS IS THE TENANT LOGIN PAGE --}}
+
+<div class="container">
+  <section class ="form my-4 mx-5">
+  <div class="row ">
+  <div class="col-xs-12 ">
+     {{!-- <h2 class=" large text-primary" style="color:black;">Tenant Login</h2> --}}
+     
+     </div></div>
+
+     
+
+
+<div class="row trow no-gutters justify-content-md-center">
+  <div class="col-lg-5 logimg">
+                  <img src="/kk.jpg" class="logimg img-fluid" alt="">
+              </div>
+
+<div class="col-lg-7 px-5 pt-3">
+
+  <h2 class="large loginas ">Welcome Back !</h2>
+     <h3 class="loginas medium">Tenant's Login Page</h3>
+
+
+
+ <form action="/Tenant" method="post" class="form input-lg">
+ <div class="form-row">
+     <div class="col-lg-8 pt-3">
+     {{#if error}}
+     <br>
+  <div class="fail text-center">     
+    <strong>{{error}} </strong>  
+  </div>
+  <br>
+{{/if}}
+{{#if success}}
+  <div class="success">
+    <strong>{{success}} </strong>  
+  </div>
+{{/if}}</div></div>
+
+
+        <div class="form-row ">
+          <div class="col-lg-12">
+        <input name="email"  value="{{email}}" type="email" class="form-control my-3 p-4"  placeholder="email">
+</div>
+        {{!-- <p style="font-family:sans-serif">Alphanumeric ,can contain underscores(_), atleast 5 Characters</p> --}}
+        </div>
+        <div class="form-row">
+          <div class="col-lg-12">
+        <input name="password"  value="{{password}}" type="password" class="form-control my-3 p-4" placeholder="Password">
+        {{!-- <p>The Password is Alphanumeric and can contain @ and hyphens(-) Must contain 8 to 20 Characters</p> --}}
+        </div></div>
+
+         <div class="form-row">
+           <div class="col-lg-8">
+        <button type="submit"  class="button-81 mb-4 mt-2">Login as Tenant</button>
+        </div></div>
+
+        
+                  <p>Don't have an account? <a href="/register">Sign up</a></p>
+                
+       <!-- here--> 
+        <script src="customer_login_js.js"></script>
+    </form>
+    </div></section>
+</div> </div>
