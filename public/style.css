@@ -201,7 +201,7 @@ margin-bottom: 0;
 
 .landing {
   position: relative;
-  background: url('./house-rented-purpose.jpg') no-repeat center center/cover; 
+  background: url('.Untitleddn/.jpg') no-repeat center center/cover; 
   height: 100vh;
 }
 .landing-inner {
@@ -214,6 +214,9 @@ margin-bottom: 0;
   align-items: center;
   justify-content: center;
   text-align: center;
+  background-image: url("Untitleddn.jpg");
+  background-size: 100% ;
+  background-repeat: no-repeat;
 }
 .button {
   background-color: #000000;

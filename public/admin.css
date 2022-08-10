@@ -34,14 +34,20 @@ h1{
   color:#1E90FF;
 }
 .table{
-  margin: 0 auto;
-  
+  margin: 8 auto;
+  margin-left: auto;
+margin-right: auto;
 }
 .table th,
 .table td {
-  padding: 1rem;
+  padding: 2rem;
   text-align: left;
   background-color: whitesmoke;
+}
+.table th {
+  background:#a47e00;
+  color: #f2f2f2;
+  border: 1.5px black solid;
 }
 .sub{
   padding: 10px;
@@ -75,11 +81,7 @@ h1{
   font-size: 17px;
   text-decoration: none;
 }
-.table th {
-  background:#ff6347;
-  color: #f2f2f2;
-  border: 1px black solid;
-}
+
 .topnav {
     display: flex;
     align-items: center;

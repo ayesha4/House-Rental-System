@@ -11,14 +11,18 @@
         
         <div class="sidenav">
             {{!-- <h1>Admin Panel</h1> --}}
-            <a href = "/Landlord/dashboard" class="first">Dashboard</a>
-           <a href="/Landlord/addHouse">View Tenants</a>
-           <a href="/Landlord/house">View Landlords</a>
-           <a href="/Landlord/booking">Bookings</a>
+            <img src="/public/logo.png" alt=" " id="logo" style=" float: left; display: inline-block;"/> 
+
+
+            <a href = "/admin/dashboard" class="first">Dashboard</a>
+           <a href="/admin/viewtenants">View Tenants</a>
+           <a href="/admin/viewlandlords">View Landlords</a>
+           <a href="/admin/adminbooking">Bookings</a>
           <a  href = "/">Logout</a>
           
           
         </div>
+        <div>
         {{{body}}}
         
          

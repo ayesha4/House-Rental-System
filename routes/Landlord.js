@@ -35,20 +35,47 @@ router.get('/booking',async(req,res)=>{
        
     
 });
-router.get('/house/:hid',async(req,res)=>{
-    const fhq = 'SELECT Name,email,T.Address FROM Tenant AS T , HouseBooking AS HB WHERE HB.uid = T.uid AND HB.hid = ?'
-    db.query(fhq,req.params.hid,(err,home)=>{
-        if(err)throw err;
-        var customer = [];
-        for(i=0;i<home.length;i++)customer.push(home[i]);
-        res.render('Landlord/Tenet',{tenets:customer});        
-        });
+// router.get('/house/:hid',async(req,res)=>{
+//     const fhq = 'SELECT Name,email,T.Address,T.phone FROM Tenant AS T , HouseBooking AS HB WHERE HB.uid = T.uid AND HB.hid = ?'
+//     db.query(fhq,req.params.hid,(err,home)=>{
+//         if(err)throw err;
+//         var customer = [];
+//         for(i=0;i<home.length;i++)customer.push(home[i]);
+//         res.render('Landlord/Tenet',{tenets:customer});        
+//         });
         
-});   
-
+// }); 
+router.get('/house/:hid',(req,res)=>{
+    const fq="select * from housebookings";
+    db.query('SELECT DISTINCT uid FROM housebooking', (error, results, fields) => 
+    {
+        console.log('we did a query');
+        if(error) 
+        {
+            console.log("Error: ",error);
+            res.send({
+                "code": 400,
+                "failed": "Error occurred"
+            });
+        } else {
+            console.log("Results: ",results);
+            /*res.send({
+                "code": 200,
+                "success": "Database successfully logged"
+            });*/
+            res.render('Landlord/Tenet', {data: results});           
+        }
+    });
+    
+    
+    
+          
+        })
 router.get('/addHouse',(req,res)=>{
     res.render('Landlord/house');
 })
+
+
 router.post('/addHouse',async (req,res)=>{
     let filename = 'apartment-cheap-rent-flat-for-lease.jpg';
     if (!isEmpty(req.files)) {        
@@ -123,6 +150,22 @@ router.get('/HouseReview/:hid',async(req,res)=>{
 router.get('/customer',(req,res)=>{
     res.render('Landlord/customers');
 })
+
+
+// delete intrested tenants
+
+// router.post('Landlord/house/:hid',async(req,res)=>{
+//     const fhq = `DELETE FROM housebooking WHERE hid = ${{hid}}`
+//     db.query(fhq,req.params.hid,(err,home)=>{
+
+//         if(err)throw err;
+//         req.flash('success','user has been removed');
+//         res.redirect('/Landlord/house');        
+//         });
+        
+// }); 
+
+
 
 
 module.exports = router;
