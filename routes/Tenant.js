@@ -97,7 +97,7 @@ router.post('/HouseReview/:id',async(req,res)=>{
 //added bid
 
 router.get('/houseBookings',async(req,res)=>{
-   const fq = 'SELECT Type,bid, Address, rent, file FROM HouseBooking WHERE uid = ? ';
+   const fq = 'SELECT DISTINCT Type,bid, Address, rent, file FROM HouseBooking WHERE uid = ? ';
    db.query(fq,req.user.uid,(err,bookings)=>{
        if(err)throw err;
        var booking = [];
@@ -107,8 +107,16 @@ router.get('/houseBookings',async(req,res)=>{
     
 });
 
+//code to delte a bookinghistory
 
-
+router.post('/houseBookings/:bid',async(req,res)=>{
+    const fhq = 'DELETE FROM housebooking WHERE bid = ? '
+    db.query(fhq,req.params.bid,(err,home)=>{
+        if(err)throw err;
+        req.flash('success','user deleted');
+        res.redirect('/Tenant/houseBookings');        
+        });
+}); 
 
 
 module.exports = router;

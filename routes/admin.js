@@ -143,7 +143,7 @@ router.post('/viewlandlords/:uid',async(req,res)=>{
             res.redirect('/admin/adminbooking');        
             });
             
-    }); 
+    });  
 
 
 module.exports = router;

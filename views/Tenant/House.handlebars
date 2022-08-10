@@ -1,5 +1,5 @@
  <div>
-<h2 class="large text-primary">Houses</h2>
+<h2 class="large text-primary">Available Houses For Rent</h2>
 {{#if success}}
   <div class="success">
     <strong>{{success}} </strong>  
@@ -11,8 +11,14 @@
     <strong>{{message}} </strong>  
   </div>
 {{/each}}
-
-
+<div class="container hyp">
+        <span style="margin-right: 20px;">Choose your category:</span>
+        <a href="#section1" class="btn button-59 btn-info fcc-btn" role="button">Apartment</a>
+        <a href="#section2" class="btn button-59 fcc-btn">Independent house</a>
+        <a href="#section3" class="btn button-59 fcc-btn">PG</a>
+      
+    </div>
+<div class="section one" id="section1">
  <p class="lead">Apartment</p>
       {{#each item}}
 
@@ -21,8 +27,10 @@
   <div class="container">
     <div class="card-body">
                   <h5 class="card-title">Category:Apartment</h5>
-                  <p class="card-text mb-1">Owner: {{Address}}</p>
-                  <p class="card-text mb-1">Rent:{{rent}}</p> 
+                  <h5 class="card-title"></h5>
+                  <p class="card-text mb-1"><b>Address : </b> {{Address}}</p>
+                  <p class="card-text mb-1"><b> Description : </b>{{Description}}</p>
+                  <p class="card-text mb-1"><b>Rent : </b>{{rent}}</p> 
     <form action="/Tenant/house/{{hid}}" method="POST">
     <button type="submit" class="button-59">Schedule Meeting</button>
     </form><br>
@@ -33,9 +41,9 @@
 </div></div>
 <br><br>
 {{/each}}
-
-
-<p class="lead">Bunglow</p>
+</div>
+<div class="section two" id="section2"> 
+<p class="lead">Independent House</p>
   {{#each item1}}
     <div class="card mb-1">
       <img class="card-img-top img-responsive" height="50px" src="/uploads/{{file}}" alt="Card image cap">
@@ -43,8 +51,8 @@
   <h4><b>{{Address}}</b></h4> 
   <div class="container">
     <div class="card-body">
-                  <h5 class="card-title">Category:Apartment</h5>
-                  <p class="card-text mb-1">Owner: {{Address}}</p>
+                  <h5 class="card-title">Category:Independent House</h5>
+                  <p class="card-text mb-1">Address: {{Address}}</p>
                   <p class="card-text mb-1">Rent:{{rent}}</p>
         <form action="/Tenant/house/{{hid}}" method="POST">
     <button type="submit" class="button-59">Schedule Meeting</button>
@@ -57,7 +65,9 @@
 </div></div>
 <br><br>
 {{/each}}
+</div>
 
+<div class="section three" id="section3">
 <p class="lead">Pg</p>
   {{#each item2}}
     <div class="card">
@@ -65,8 +75,8 @@
    <h4><b>{{Address}}</b></h4>
   <div class="container">
     <div class="card-body">
-                  <h5 class="card-title">Category:Apartment</h5>
-                  <p class="card-text mb-1">Owner: {{Address}}</p>
+                  <h5 class="card-title">Category:PG</h5>
+                  <p class="card-text mb-1">Address: {{Address}}</p>
                   <p class="card-text mb-1">Rent:{{rent}}</p>
          <form action="/Tenant/house/{{hid}}" method="POST">
     <button type="submit" class="button-59">Schedule Meeting</button>
@@ -81,3 +91,4 @@
 <br><br>
 {{/each}}
 
+</div>

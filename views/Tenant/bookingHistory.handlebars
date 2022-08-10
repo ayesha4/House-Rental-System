@@ -3,8 +3,10 @@
     {{#each booking }}
    <div class="card">
        <img height="50px" class="img-responsive" src="/uploads/{{file}}" alt="">
-  <p><h4><b>{{Address}}</b></h4></p>
-  <form action="/tenants/houseBookings/{{bid}}" method="POST">
+  <p><h4><b>Type:{{Type}}</b></h4></p>
+  <p><h4><b>Address:{{Address}}</b></h4></p>
+  <p><h4><b>Rent:{{rent}}</b></h4></p>
+  <form action="/Tenant/houseBookings/{{bid}}" method="POST">
                         <button type="submit" class="view">DELETE</button>
                     </form> 
 </div>
