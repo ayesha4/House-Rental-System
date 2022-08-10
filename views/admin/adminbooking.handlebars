@@ -1,6 +1,40 @@
 <div>
 <p>Bookings</p>
-
+          <table class="atable table">
+  <thead>
+    <tr>
+      <th scope="col">bid</th>
+      <th scope="col">hid</th>
+      <th scope="col">Type</th>
+      <th scope="col">Address</th>
+      <th scope="col">rent</th>
+      <th scope="col">uid</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each data}} 
+    <tr>
+      
+      <td >{{bid}}</td>
+      <td>{{hid}}</td>
+      <td>{{Type}}</td>
+      <td>{{Address}}</td>
+      <td>{{rent}}</td>
+      <td>{{uid}}</td>
+      
+       <td>
+                        <form action="/admin/adminbooking/{{uid}}" method="POST">
+                        <button type="submit" class="view">DELETE</button>
+                    </form> 
+                    </td>
+    </tr>
+    
+     {{/each}}
+  </tbody>
+</table>
+          
+  
 
 
 </div></div>

@@ -30,12 +30,12 @@ router.get('/dashboard',async(req,res)=>{
     });
     });
 
-
+//code to view tenant data in a table
 router.get('/viewtenants',(req,res)=>{
 const fq="select * from tenant";
 db.query('SELECT * FROM tenant', (error, results, fields) => 
 {
-    console.log('we did a query');
+    console.log('we did a query for tenants');
     if(error) 
     {
         console.log("Error: ",error);
@@ -44,7 +44,7 @@ db.query('SELECT * FROM tenant', (error, results, fields) =>
             "failed": "Error occurred"
         });
     } else {
-        console.log("Results: ",results);
+        // console.log("Results: ",results);
         /*res.send({
             "code": 200,
             "success": "Database successfully logged"
@@ -53,19 +53,58 @@ db.query('SELECT * FROM tenant', (error, results, fields) =>
     }
 });
 
-
-
-      
     })
 
+   
+
+    // code to view landlord data on a table
     router.get('/viewlandlords',(req,res)=>{
-        res.render('admin/viewlandlords');
-    })
+        const fq="select * from owner";
+        db.query('SELECT * FROM owner', (error, results, fields) => 
+        {
+            console.log('we did a query for landlordss');
+            if(error) 
+            {
+                console.log("Error: ",error);
+                res.send({
+                    "code": 400,
+                    "failed": "Error occurred"
+                });
+            } else {
+                console.log("Results: ",results);
+                /*res.send({
+                    "code": 200,
+                    "success": "Database successfully logged"
+                });*/
+                res.render('admin/viewlandlords', {data: results});           
+            }
+        });
+           
+            })
 
     router.get('/adminbooking',(req,res)=>{
-        res.render('admin/adminbooking');
+        db.query('SELECT * FROM housebooking', (error, results, fields) => 
+        {
+            console.log('we did a query for house bookings');
+            if(error) 
+            {
+                console.log("Error: ",error);
+                res.send({
+                    "code": 400,
+                    "failed": "Error occurred"
+                });
+            } else {
+                console.log("Results: ",results);
+                /*res.send({
+                    "code": 200,
+                    "success": "Database successfully logged"
+                });*/
+                          
+            }
+            res.render('admin/adminbooking', {data: results}); 
+        });
+        
     })
-
 
 
 module.exports = router;
