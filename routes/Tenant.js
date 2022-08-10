@@ -94,10 +94,10 @@ router.post('/HouseReview/:id',async(req,res)=>{
    
 })
 
-
+//added bid
 
 router.get('/houseBookings',async(req,res)=>{
-   const fq = 'SELECT Type, Address, rent, file FROM HouseBooking WHERE uid = ? ';
+   const fq = 'SELECT Type,bid, Address, rent, file FROM HouseBooking WHERE uid = ? ';
    db.query(fq,req.user.uid,(err,bookings)=>{
        if(err)throw err;
        var booking = [];
