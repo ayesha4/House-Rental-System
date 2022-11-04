@@ -1,7 +1,4 @@
-# Rental House Management System
-
-Here is video link showing how our project works :- 
- https://drive.google.com/file/d/1TLT7NMk1pTDBmJ6eheN5nbmPGdWo4Pug/view?usp=sharing
+# Rental House System
 
 ## Steps to run the project are as follow:
 
